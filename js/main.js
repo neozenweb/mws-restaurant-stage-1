@@ -3,6 +3,37 @@ let restaurants,
   cuisines
 var newMap
 var markers = []
+var listIndex = 1;
+
+
+// Next/previous controls
+function moveList(n) {
+  
+    listItems(listIndex += n);
+   
+}
+
+
+
+function listItems(n) {
+  var i;
+    
+ // var restul;
+  // var restul = document.getElementsByClassName("restaurants-list");
+   var rlist = document.querySelectorAll('ul li');
+   
+    if (n > rlist.length) {listIndex = 1} 
+  if (n < 1) {listIndex = rlist.length}
+   
+  for (i = 0; i < rlist.length; i++) {
+      rlist[i].style.display = "none"; 
+  }
+   rlist[listIndex-1].style.display = "block"; 
+  
+}
+
+
+
 
 /**
  * Fetch neighborhoods and cuisines as soon as the page is loaded.
@@ -78,7 +109,7 @@ initMap = () => {
         scrollWheelZoom: false
       });
   L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.jpg70?access_token={mapboxToken}', {
-    mapboxToken: '<your MAPBOX API KEY HERE>',
+    mapboxToken: 'pk.eyJ1IjoibmVvemVud2ViIiwiYSI6ImNqbmVxam9ldjBjdTAzcXA3OW5jem4zcGMifQ.F8s-Q2IPoYjDyOAWJlUKsQ',
     maxZoom: 18,
     attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/">OpenStreetMap</a> contributors, ' +
       '<a href="https://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, ' +
@@ -148,6 +179,7 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
   const ul = document.getElementById('restaurants-list');
   restaurants.forEach(restaurant => {
     ul.append(createRestaurantHTML(restaurant));
+      document.querySelectorAll('ul li')[0].style.display="block";
   });
   addMarkersToMap();
 }
@@ -158,10 +190,28 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
-  const image = document.createElement('img');
+ /* const image = document.createElement('img');
   image.className = 'restaurant-img';
   image.src = DBHelper.imageUrlForRestaurant(restaurant);
+  li.append(image);*/
+    
+  const image = document.createElement('picture');
+    image.className = 'restaurant-img';
+ 
+   const src = image.appendChild(document.createElement('source'));
+   src.srcset = DBHelper.imageUrlForRestaurant(restaurant);
+    src.media= 'min-width:701px';
+    src.sizes="20px";
+    const srcimg = image.appendChild(document.createElement('img'));
+    srcimg.src = DBHelper.imageUrlForRestaurant(restaurant);
+    srcimg.className='restaurant-img';
   li.append(image);
+    
+   /*<picture>
+  <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
+  <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
+  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
+</picture>*/
 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
