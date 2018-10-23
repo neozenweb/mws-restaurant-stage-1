@@ -14,12 +14,11 @@ function moveList(n) {
 }
 
 
+//For the carousel display of restaurants list
 
 function listItems(n) {
   var i;
-    
- // var restul;
-  // var restul = document.getElementsByClassName("restaurants-list");
+ 
    var rlist = document.querySelectorAll('ul li');
    
     if (n > rlist.length) {listIndex = 1} 
@@ -31,7 +30,6 @@ function listItems(n) {
    rlist[listIndex-1].style.display = "inline"; 
   
 }
-
 
 
 
@@ -190,29 +188,20 @@ fillRestaurantsHTML = (restaurants = self.restaurants) => {
 createRestaurantHTML = (restaurant) => {
   const li = document.createElement('li');
 
- /* const image = document.createElement('img');
-  image.className = 'restaurant-img';
-  image.src = DBHelper.imageUrlForRestaurant(restaurant);
-  li.append(image);*/
-    
+ 
   const image = document.createElement('picture');
     image.className = 'restaurant-img';
  
    const src = image.appendChild(document.createElement('source'));
    src.srcset = DBHelper.imageUrlForRestaurant(restaurant);
-   // src.media= 'min-width:701px';
-    //src.sizes="20px";
+    src.media= 'min-width:901px';
+    src.sizes="20px";
     const srcimg = image.appendChild(document.createElement('img'));
     srcimg.src = DBHelper.imageUrlForRestaurant(restaurant);
     srcimg.className='restaurant-img';
   li.append(image);
     
-   /*<picture>
-  <source media="(min-width: 650px)" srcset="img_pink_flowers.jpg">
-  <source media="(min-width: 465px)" srcset="img_white_flower.jpg">
-  <img src="img_orange_flowers.jpg" alt="Flowers" style="width:auto;">
-</picture>*/
-
+ 
   const name = document.createElement('h1');
   name.innerHTML = restaurant.name;
   li.append(name);
@@ -231,6 +220,7 @@ createRestaurantHTML = (restaurant) => {
   const dets = document.createElement('h3');
   const more = dets.appendChild(document.createElement('a'));
   more.innerHTML = 'View Details';
+  more.tabIndex='7';
   more.href = DBHelper.urlForRestaurant(restaurant);
   //li.append(more)
     li.append(dets);
