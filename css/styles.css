@@ -42,11 +42,8 @@ article, aside, canvas, details, figcaption, figure, footer, header, hgroup, men
 .gridcontainer {
    
 	display: grid;
-	grid-template-columns:auto;
-    grid-template-rows:auto;
-   	align-content:space-evenly;
-     height:50%;
-
+	grid-template-columns:auto auto auto;
+   
 }
 #maincontent {
   background-color: #f3f3f3;
@@ -109,7 +106,7 @@ nav h1 a {
 
 @media screen and (max-width: 900px) {
 #map {
-  height: 230px;
+  height: 400px;
   width: 100%;
   font-display: optional;
   background-color: #ccc;
@@ -171,14 +168,8 @@ nav h1 a {
     }
 
 #restaurants-list {
- /* background-color: #f3f3f3;
-  list-style: outside none none;
-  margin: 0;
-  text-align: center;
-    display:flex;
-  order:4;*/
+
     
-    padding-left:20%;
    
 }
 #restaurants-list li {
@@ -186,14 +177,15 @@ nav h1 a {
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
   text-align:justify;
-  display:none;
+  display:inline;
+  padding: 15px 15px 15px 15px;
  }
  .restaurant-img {
   background-color: #fff;
   display: inline;
   margin: 0;
-  width:40%;
-  height:20%;
+  width:50%;
+
   }    
     
 #restaurants-list li h1 {
@@ -227,7 +219,7 @@ nav h1 a {
 /* ====================== Map ====================== */
 @media screen and (min-width: 901px) {
 #map {
-  height: 100px;
+  height: 400px;
   width: 100%;
   background-color: #ccc;
    
@@ -289,7 +281,7 @@ nav h1 a {
 
 #restaurants-list {
   
-   padding-left:20%;
+  
 }
 
 #restaurants-list li {
@@ -297,14 +289,15 @@ nav h1 a {
   border: 2px solid #ccc;
   font-family: Arial,sans-serif;
   text-align:justify;
-  display:none;
+  display:inline;
+  padding: 15px 15px 15px 15px;
  }
  .restaurant-img {
   background-color: #fff;
   display: inline;
   margin: 0;
-  width:40%;
-  height:20%;
+  width:50%;
+
   }    
     
     
@@ -343,11 +336,11 @@ nav h1 a {
 }
 .inside #map-container {
   background: blue none repeat scroll 0 0;
-  height: 87%;
+  height: 70%;
   position: fixed;
   right: 0;
   top: 80px;
-  width: 50%;
+  width: 45%;
 }
 .inside #map {
   background-color: #ccc;

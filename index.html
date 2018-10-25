@@ -20,9 +20,9 @@
 
   <main id="maincontent">
     <section id="map-container">
-      <div id="map"  tabindex='1'></div>
+      <div id="map"  role="application" aria-describedby="info" tabindex='1'></div>
     </section>
-    <section  class="gridcontainer">
+    <section>
       <div class="filter-options"  tabindex='2'>
         <h2>Filter Results</h2>
         <select id="neighborhoods-select" name="neighborhoods" onchange="updateRestaurants()"  tabindex='3'>
@@ -33,12 +33,9 @@
         </select>
       </div>
        
+        
         <div>
-            <a class="pointers" onclick="javascript:moveList(-1);"  tabindex='5'>&#10094;</a>
-                 <a class="pointers" onclick="javascript:moveList(1);"  tabindex='6'>&#10095;</a>
-        </div>
-        <div>
-                        <ul id="restaurants-list" ></ul>
+                        <ul id="restaurants-list"   class="gridcontainer" ></ul>
          </div>
        
     </section>
