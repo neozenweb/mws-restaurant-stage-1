@@ -106,7 +106,7 @@ nav h1 a {
 
 @media screen and (max-width: 900px) {
 #map {
-  height: 400px;
+  height: 300px;
   width: 100%;
   font-display: optional;
   background-color: #ccc;
@@ -206,7 +206,7 @@ nav h1 a {
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
-  font-size: 10pt;
+  font-size: 5pt;
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -219,7 +219,7 @@ nav h1 a {
 /* ====================== Map ====================== */
 @media screen and (min-width: 901px) {
 #map {
-  height: 400px;
+  height: 300px;
   width: 100%;
   background-color: #ccc;
    
@@ -320,7 +320,7 @@ nav h1 a {
   border-bottom: 3px solid #eee;
   color: #fff;
   display: inline-block;
-  font-size: 10pt;
+  font-size: 5pt;
    text-align: center;
   text-decoration: none;
   text-transform: uppercase;
@@ -384,7 +384,7 @@ nav h1 a {
 #restaurant-container, #reviews-container {
   border-bottom: 1px solid #d9d9d9;
   border-top: 1px solid #fff;
-  padding: 140px 40px 30px;
+  padding: 90px 20px 30px;
   width: 50%;
 }
 #reviews-container {

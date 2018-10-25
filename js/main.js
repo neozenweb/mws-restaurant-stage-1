@@ -35,7 +35,7 @@ function listItems(n) {
 
 if ('serviceWorker' in navigator){
     navigator.serviceWorker
-    .register('js/sw.js')
+    .register('/js/sw.js')
     .catch(function(err){
         console.log("error " + err);
     });
