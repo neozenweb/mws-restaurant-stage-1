@@ -8,7 +8,7 @@ const cachefiles=[
     '/../../js/main.js',
     '/../../js/restaurant_info.js',
     '/../../data/restaurants.json',
-    '/../../img/1.jpg',
+    'https://neozenweb.github.io/mws-restaurant-stage-1/img/1.jpg',
     '/../../img/2.jpg',
     '/../../img/3.jpg',
     '/../../img/4.jpg',
