@@ -9,7 +9,7 @@ class DBHelper {
    */
   static get DATABASE_URL() {
    const port=80; // Change this to your server port
-    return `mws-restaurant-stage-1/data/restaurants.json`;
+    return `https://github.com/neozenweb/mws-restaurant-stage-1/blob/master/data/restaurants.json`;
   }
 
   /**
